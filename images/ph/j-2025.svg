@@ -1,0 +1,14 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='1500' height='1000' viewBox='0 0 1500 1000'>
+<defs><linearGradient id='bg' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='#2a2f45'/><stop offset='1' stop-color='#07080f'/></linearGradient>
+<radialGradient id='glow' cx='.75' cy='.3' r='.7'><stop offset='0' stop-color='#ffffff' stop-opacity='.18'/><stop offset='1' stop-color='#ffffff' stop-opacity='0'/></radialGradient>
+<filter id='g'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .35 0'/></filter></defs>
+<rect width='1500' height='1000' fill='url(#bg)'/><rect width='1500' height='1000' fill='url(#glow)'/>
+<path d='M 1338 420 C 1348 448, 1306 484, 1287 515 C 1267 546, 1254 589, 1219 605 C 1184 621, 1124 596, 1078 608 C 1032 620, 988 674, 941 678 C 894 681, 833 653, 797 627 C 760 602, 726 561, 721 526 C 716 492, 763 454, 767 420 C 770 386, 727 347, 740 320 C 754 293, 809 273, 845 258 C 882 242, 917 245, 960 227 C 1004 208, 1054 152, 1104 147 C 1154 142, 1239 164, 1260 197 C 1282 230, 1219 307, 1232 344 C 1245 382, 1329 392, 1338 420 Z' fill='none' stroke='#ffffff' stroke-opacity='.10' stroke-width='60' stroke-linejoin='round'/>
+<path d='M 1338 420 C 1348 448, 1306 484, 1287 515 C 1267 546, 1254 589, 1219 605 C 1184 621, 1124 596, 1078 608 C 1032 620, 988 674, 941 678 C 894 681, 833 653, 797 627 C 760 602, 726 561, 721 526 C 716 492, 763 454, 767 420 C 770 386, 727 347, 740 320 C 754 293, 809 273, 845 258 C 882 242, 917 245, 960 227 C 1004 208, 1054 152, 1104 147 C 1154 142, 1239 164, 1260 197 C 1282 230, 1219 307, 1232 344 C 1245 382, 1329 392, 1338 420 Z' fill='none' stroke='#ffffff' stroke-opacity='.55' stroke-width='3' stroke-dasharray='10 10'/>
+<g transform='skewX(-24)'><rect x='155' y='100' width='150' height='12' fill='#e4002b'/><rect x='320' y='100' width='98' height='12' fill='#ff6b00'/><rect x='432' y='100' width='53' height='12' fill='#ffc906'/></g>
+<text x='90' y='860' font-family="'Arial Narrow','Helvetica Neue',Arial,sans-serif" font-weight='900' font-size='420' fill='#ffffff' fill-opacity='.92' letter-spacing='-4'>2025</text>
+<text x='98' y='930' font-family="Didot,'Bodoni 72',Georgia,serif" font-style='italic' font-size='50' fill='#ffc906'>runner-up, 421 points</text>
+<text x='1410' y='80' text-anchor='end' font-family="'SF Mono',Consolas,monospace" font-size='22' fill='#ffffff' fill-opacity='.65' letter-spacing='2'>P2</text>
+<text x='1410' y='955' text-anchor='end' font-family="'SF Mono',Consolas,monospace" font-size='18' fill='#ffffff' fill-opacity='.45' letter-spacing='1.5'>ADD PHOTO → images/history/2025-season.webp</text>
+<rect width='1500' height='1000' filter='url(#g)' opacity='.6'/>
+</svg>

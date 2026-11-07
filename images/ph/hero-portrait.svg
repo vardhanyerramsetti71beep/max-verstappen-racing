@@ -1,0 +1,21 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='1600' height='2000' viewBox='0 0 1600 2000'>
+<defs>
+<linearGradient id='suit' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='#1d2a5c'/><stop offset='1' stop-color='#0e1430'/></linearGradient>
+<linearGradient id='skin' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='#e6b996'/><stop offset='1' stop-color='#c99474'/></linearGradient>
+</defs>
+<path d='M700 1000 L 900 1000 L 920 1120 L 680 1120 Z' fill='url(#skin)'/>
+<ellipse cx='800' cy='820' rx='270' ry='300' fill='url(#skin)'/>
+
+<path d='M180 2000 C 170 1500 280 1240 560 1130 L 700 1080 L 800 1180 L 900 1080 L 1040 1130 C 1320 1240 1430 1500 1420 2000 Z' fill='url(#suit)'/>
+<path d='M640 1060 L 800 1190 L 960 1060 L 1000 1110 L 800 1290 L 600 1110 Z' fill='#e4002b'/>
+<path d='M612 1118 L 800 1290 L 988 1118' stroke='#ffc906' stroke-width='18' fill='none'/>
+<path d='M240 1560 C 500 1500 1100 1500 1360 1560 L 1370 1630 C 1100 1570 500 1570 230 1630 Z' fill='#e4002b'/>
+<path d='M235 1640 C 500 1580 1100 1580 1365 1640 L 1368 1680 C 1100 1622 500 1622 232 1680 Z' fill='#ff6b00'/>
+<path d='M233 1690 C 500 1632 1100 1632 1367 1690 L 1368 1715 C 1100 1660 500 1660 232 1715 Z' fill='#ffc906'/>
+<g font-family="'Arial Narrow','Helvetica Neue',Arial,sans-serif" font-weight='900' fill='#fff' fill-opacity='.9'>
+  <text x='800' y='1470' text-anchor='middle' font-size='120' font-style='italic'>MV</text>
+  <text x='420' y='1400' text-anchor='middle' font-size='54' fill-opacity='.55'>#3</text>
+  <text x='1180' y='1400' text-anchor='middle' font-size='54' fill-opacity='.55'>NL</text>
+</g>
+<text x='800' y='1880' text-anchor='middle' font-family="'SF Mono',Consolas,monospace" font-size='30' fill='#fff' fill-opacity='.4' letter-spacing='4'>ADD PHOTO → images/hero/max-face.webp</text>
+</svg>

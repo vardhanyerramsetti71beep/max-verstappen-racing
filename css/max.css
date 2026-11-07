@@ -1,0 +1,154 @@
+/* Max Verstappen Racing — theme layer on top of base.css (the reference site's styles). */
+
+/* Fonts come from Google Fonts instead of the reference build's self-hosted files. */
+:root {
+  --f-display: "Bodoni Moda", "Didot", "Bodoni 72", serif;
+  --f-sans: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --f-mono: "JetBrains Mono", ui-monospace, "SF Mono", monospace;
+}
+
+/* MV Livery: navy, red, orange, yellow */
+:root, html[data-theme=livery] {
+  --ground: #f4f4f2; --ground-2: #e9e9e6;
+  --ink: #0e1430; --ink-soft: #343b58; --muted: #868aa0;
+  --line: rgb(14 20 48 / .12);
+  --accent: #e4002b; --accent-2: #ff6b00; --accent-3: #ffc906;
+  --on-accent: #ffffff; --panel: #0e1430; --on-panel: #f4f4f2;
+  --photo-filter: none;
+  color-scheme: light;
+}
+html[data-theme=night] {
+  --ground: #070a17; --ground-2: #10142a;
+  --ink: #eef0f7; --ink-soft: #c3c7d8; --muted: #7a7f98;
+  --line: rgb(238 240 247 / .12);
+  --accent: #ff2340; --accent-2: #ff7a1a; --accent-3: #ffd23a;
+  --on-accent: #070a17; --panel: #141936; --on-panel: #eef0f7;
+  --photo-filter: contrast(1.08) saturate(.9);
+  color-scheme: dark;
+}
+html[data-theme=orange] {
+  --ground: #fff1e4; --ground-2: #ffe2c6;
+  --ink: #1d1206; --ink-soft: #5a3a17; --muted: #a98258;
+  --line: rgb(29 18 6 / .14);
+  --accent: #ff5f00; --accent-2: #21468b; --accent-3: #ae1c28;
+  --on-accent: #fff8f0; --panel: #1d1206; --on-panel: #fff1e4;
+  --photo-filter: saturate(1.08);
+  color-scheme: light;
+}
+html[data-theme=mono] {
+  --ground: #ececec; --ground-2: #dedede;
+  --ink: #141414; --ink-soft: #3a3a3a; --muted: #8c8c8c;
+  --line: rgb(20 20 20 / .12);
+  --accent: #d7141a; --accent-2: #141414; --accent-3: #6b6b6b;
+  --on-accent: #fff; --panel: #141414; --on-panel: #ececec;
+  --photo-filter: grayscale(1) contrast(1.05);
+}
+.ttg__swatch--livery { background: conic-gradient(from 180deg, #0e1430 0deg 120deg, #e4002b 120deg 240deg, #ffc906 240deg 360deg); }
+.ttg__swatch--night { background: #070a17; box-shadow: 0 0 0 2px #ff2340; }
+.ttg__swatch--orange { background: linear-gradient(135deg, #ff5f00 50%, #21468b 50%); }
+
+/* Film grain over the whole page, like the reference */
+body::after {
+  content: ""; position: fixed; inset: 0; z-index: 1001; pointer-events: none; opacity: .07; mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+html[data-theme=night] body::after { mix-blend-mode: screen; opacity: .05; }
+
+/* Hero: 2D contour field is always on in this build */
+.hero__field { display: block; }
+.hero__gl { display: none; }
+.hero__carview { position: absolute; z-index: 1; right: -4vw; top: 30%; width: min(34vw, 520px); aspect-ratio: 16 / 10; pointer-events: none; }
+.hero__carview canvas { width: 100%; height: 100%; display: block; }
+@media (max-width: 860px), (max-aspect-ratio: 1/1) { .hero__carview { display: none; } }
+.hero__portrait { pointer-events: auto; }
+/* helmet lens: JS sets the mask and scale every frame */
+.hero__portrait.is-css .hero__img--helmet { transition: none; visibility: hidden; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; filter: var(--photo-filter) drop-shadow(0 6px 18px rgb(0 0 0 / .25)); }
+
+/* Journey: the pin is driven by CSS sticky; JS sets the section height */
+@media (min-width: 721px) {
+  .jny__pin { position: sticky; top: 0; }
+}
+.jny__year { transition: -webkit-text-stroke-color .3s; }
+
+/* On/off halves: flex grow is animated by JS */
+.onoff__half { transition: flex-grow .9s var(--ease-io); }
+.onoff__half:hover .onoff__img { filter: var(--photo-filter); transform: scale(1); }
+
+/* Garage: the RB18 photo on a perspective stage */
+.grg-bay { background: #020203; }
+.grg-stage { position: absolute; inset: 0; overflow: hidden; perspective: 1400px; perspective-origin: 50% 45%; }
+.grg-photo { position: absolute; left: 0; top: 0; transform-origin: 52% 55%; will-change: transform, filter;
+  -webkit-mask-image: radial-gradient(72% 70% at 52% 55%, #000 62%, transparent 100%); mask-image: radial-gradient(72% 70% at 52% 55%, #000 62%, transparent 100%); }
+.grg-photo > img { width: 100%; height: 100%; display: block; object-fit: cover; user-select: none; -webkit-user-drag: none; pointer-events: none; filter: var(--photo-filter); }
+/* reflection pass across the bodywork */
+.grg-sweep { position: absolute; inset: 0; pointer-events: none; mix-blend-mode: screen; opacity: 0;
+  background: linear-gradient(105deg, transparent 38%, rgba(255,255,255,.0) 42%, rgba(255,250,240,.32) 49%, rgba(255,255,255,.0) 56%, transparent 60%);
+  background-size: 260% 100%; background-position: 130% 0;
+  -webkit-mask-image: radial-gradient(60% 42% at 52% 55%, #000 55%, transparent 100%); mask-image: radial-gradient(60% 42% at 52% 55%, #000 55%, transparent 100%); }
+.grg.is-photo-in .grg-sweep { animation: grg-sweep 6s cubic-bezier(.65,0,.35,1) 1.6s infinite; }
+@keyframes grg-sweep { 0% { background-position: 130% 0; opacity: 0; } 8% { opacity: 1; } 45% { background-position: -30% 0; opacity: 1; } 52%, 100% { background-position: -30% 0; opacity: 0; } }
+/* studio light that follows the cursor */
+.grg-light { position: absolute; inset: 0; pointer-events: none; mix-blend-mode: screen; }
+.grg .grg-hots { position: absolute; inset: 0; pointer-events: none; }
+.grg-hs { transition: opacity .5s; }
+@media (prefers-reduced-motion: reduce) { .grg.is-photo-in .grg-sweep { animation: none; } }
+
+/* By the numbers: career stats in the site's type system */
+.sts { position: relative; background: var(--ground); color: var(--ink); padding: clamp(72px, 10vw, 150px) 0 clamp(64px, 9vw, 130px); }
+.sts__in { max-width: 1680px; margin: 0 auto; padding-inline: var(--gutter); }
+.sts__label { display: flex; align-items: center; gap: 10px; margin: 0 0 clamp(18px, 2.4vw, 28px); color: var(--muted); }
+.sts__head { margin: 0 0 clamp(40px, 6vw, 80px); }
+.sts__line { display: block; }
+.sts__mask { display: block; overflow: hidden; }
+.sts__word { display: block; font-family: var(--f-sans); font-stretch: 65%; font-weight: 800; text-transform: uppercase; font-size: clamp(48px, 11vw, 170px); line-height: .94; letter-spacing: -.03em; }
+.sts__word--accent { font-family: var(--f-display); font-style: italic; font-weight: 500; text-transform: none; color: var(--accent); font-stretch: normal; font-size: clamp(56px, 12vw, 190px); }
+.sts__line--accent { margin-top: clamp(-90px, -6vw, -26px); margin-left: clamp(120px, 18vw, 300px); }
+.sts__grid { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); }
+.sts__tile { position: relative; padding: 20px 22px 26px 0; border-bottom: 1px solid var(--line); min-width: 0; }
+.sts__tile + .sts__tile { padding-left: 22px; border-left: 1px solid var(--line); }
+.sts__tile:nth-child(4) { padding-left: 0; border-left: 0; }
+.sts__bar { position: absolute; left: 0; right: 0; top: -1px; height: 2px; transform: scaleX(0); transform-origin: left; transition: transform 1.1s var(--ease-out); }
+.sts.is-in .sts__bar { transform: scaleX(1); }
+.sts__k { display: block; color: var(--muted); margin-bottom: 14px; }
+.sts__v { display: block; font-family: var(--f-sans); font-stretch: 62%; font-weight: 900; font-size: clamp(64px, 8.4vw, 150px); line-height: .84; letter-spacing: -.02em; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.sts__n { display: block; margin-top: 12px; color: var(--ink-soft); }
+.sts__tile--feature { grid-column: span 2; padding-right: 22px; }
+.sts__tile--feature .sts__v { color: var(--accent); font-size: clamp(110px, 15vw, 260px); }
+.sts__years { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+.sts__years span { padding: 5px 9px; border-radius: 999px; border: 1px solid var(--line); }
+.sts__sheet { margin: clamp(40px, 5vw, 64px) 0 0; display: grid; grid-template-columns: 1fr 1fr; column-gap: clamp(24px, 4vw, 64px); }
+.sts__row { display: grid; grid-template-columns: 2.5ch 15ch 1fr; align-items: baseline; gap: 12px; padding: 13px 0; border-bottom: 1px solid var(--line); transition: background-color .3s; }
+.sts__row:hover { background: color-mix(in srgb, var(--ink) 4%, transparent); }
+.sts__row dt, .sts__row dd { margin: 0; }
+.sts__pos { color: var(--accent); }
+.sts__row dt { color: var(--muted); }
+.sts__row dd { font-family: var(--f-sans); font-stretch: 85%; font-weight: 600; font-size: 15px; }
+@media (max-width: 900px) {
+  .sts__grid { grid-template-columns: repeat(2, 1fr); }
+  .sts__tile:nth-child(odd):not(.sts__tile--feature) { padding-left: 0; border-left: 0; }
+  .sts__tile:nth-child(even) { padding-left: 16px; border-left: 1px solid var(--line); }
+  .sts__tile--feature { grid-column: span 2; padding-left: 0; border-left: 0; }
+  .sts__v { font-size: clamp(44px, 12.5vw, 96px); }
+  .sts__tile--feature .sts__v { font-size: clamp(110px, 34vw, 200px); }
+  .sts__sheet { grid-template-columns: 1fr; }
+  .sts__row { grid-template-columns: 2.5ch 12ch 1fr; }
+}
+
+/* Footer parc fermé slot holds the car at the end of the lap */
+.ft-hero { position: relative; display: grid; place-items: center; }
+.ftr__fan { margin: 0; font-size: 12px; line-height: 1.5; color: var(--muted); max-width: 70ch; }
+
+/* Loader canvas sits above everything until the wipe ends */
+.ldr { transition: opacity .6s var(--ease-io); }
+.ldr.is-done { opacity: 0; visibility: hidden; pointer-events: none; }
+
+/* Menu */
+.mnu.is-open { display: grid; }
+.mnu__tile { transform: scaleY(0); }
+
+/* Keep the header on one line at tablet widths */
+@media (max-width: 900px) { .hdr__right .ttg__label { display: none; } .hdr__right { gap: 10px; } }
+@media (max-width: 760px) { .hdr__badge { display: none; } }
+
+/* Images that are still placeholders keep a subtle frame */
+img[data-ph-active] { background: var(--ground-2); }

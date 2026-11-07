@@ -1,0 +1,14 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='1500' viewBox='0 0 1200 1500'>
+<defs><linearGradient id='bg' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='#ff6b00'/><stop offset='1' stop-color='#7a1a08'/></linearGradient>
+<radialGradient id='glow' cx='.75' cy='.3' r='.7'><stop offset='0' stop-color='#ffffff' stop-opacity='.18'/><stop offset='1' stop-color='#ffffff' stop-opacity='0'/></radialGradient>
+<filter id='g'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .35 0'/></filter></defs>
+<rect width='1200' height='1500' fill='url(#bg)'/><rect width='1200' height='1500' fill='url(#glow)'/>
+<path d='M 1162 630 C 1156 666, 1128 703, 1102 732 C 1076 762, 1037 770, 1006 807 C 975 844, 961 936, 915 953 C 870 969, 789 922, 731 907 C 672 892, 606 890, 564 864 C 521 838, 491 791, 475 752 C 459 713, 475 672, 470 630 C 464 588, 426 534, 444 497 C 462 460, 531 437, 577 408 C 623 379, 668 336, 722 325 C 777 314, 844 333, 905 342 C 965 351, 1047 350, 1086 379 C 1125 408, 1125 473, 1138 515 C 1150 557, 1168 594, 1162 630 Z' fill='none' stroke='#ffffff' stroke-opacity='.10' stroke-width='72' stroke-linejoin='round'/>
+<path d='M 1162 630 C 1156 666, 1128 703, 1102 732 C 1076 762, 1037 770, 1006 807 C 975 844, 961 936, 915 953 C 870 969, 789 922, 731 907 C 672 892, 606 890, 564 864 C 521 838, 491 791, 475 752 C 459 713, 475 672, 470 630 C 464 588, 426 534, 444 497 C 462 460, 531 437, 577 408 C 623 379, 668 336, 722 325 C 777 314, 844 333, 905 342 C 965 351, 1047 350, 1086 379 C 1125 408, 1125 473, 1138 515 C 1150 557, 1168 594, 1162 630 Z' fill='none' stroke='#ffffff' stroke-opacity='.55' stroke-width='3' stroke-dasharray='10 10'/>
+<g transform='skewX(-24)'><rect x='159' y='150' width='120' height='18' fill='#e4002b'/><rect x='291' y='150' width='78' height='18' fill='#ff6b00'/><rect x='381' y='150' width='42' height='18' fill='#ffc906'/></g>
+<text x='72' y='1290' font-family="'Arial Narrow','Helvetica Neue',Arial,sans-serif" font-weight='900' font-size='620' fill='#ffffff' fill-opacity='.92' letter-spacing='-4'>#3</text>
+<text x='78' y='1395' font-family="Didot,'Bodoni 72',Georgia,serif" font-style='italic' font-size='75' fill='#ffc906'>zandvoort</text>
+<text x='1128' y='120' text-anchor='end' font-family="'SF Mono',Consolas,monospace" font-size='33' fill='#ffffff' fill-opacity='.65' letter-spacing='2'>PADDOCK</text>
+<text x='1128' y='1432' text-anchor='end' font-family="'SF Mono',Consolas,monospace" font-size='27' fill='#ffffff' fill-opacity='.45' letter-spacing='1.5'>ADD PHOTO → images/paddock/paddock-zandvoort.webp</text>
+<rect width='1200' height='1500' filter='url(#g)' opacity='.6'/>
+</svg>

@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="livery">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Max Verstappen Racing</title>
+<meta name="description" content="Max Verstappen Racing — car #3. Four-time Formula One World Champion: 74 wins, 138 podiums, 50 poles. Fan-made tribute.">
+<link rel="icon" href="images/ph/mv-monogram.svg">
+<script>
+  try { const t = localStorage.getItem('mv-theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=JetBrains+Mono:wght@100..800&display=swap">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/max.css">
+<script type="importmap">{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js", "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/" } }</script>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="hdr" data-header>
+  <div class="hdr__in">
+    <a href="#main" class="hdr__brand" aria-label="Max Verstappen Racing — home">
+      <span class="hdr__brand-top">Max Verstappen</span>
+      <span class="hdr__brand-bot">Racing</span>
+    </a>
+    <button type="button" class="hdr__badge mono" data-badge aria-label="Car number 3"><span data-badge-text>3</span></button>
+    <div class="hdr__right">
+      <button type="button" class="snd" data-sound-toggle aria-pressed="false" aria-label="Sound off. Turn sound on">
+        <svg class="snd__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 9.5h3.2L12 5.5v13l-4.8-4H4z"></path><path class="snd__wave" d="M15.5 9.2a4 4 0 0 1 0 5.6M18 6.8a7.4 7.4 0 0 1 0 10.4"></path><path class="snd__x" d="M16 9.5l5 5M21 9.5l-5 5"></path></svg>
+        <span class="snd__label mono" data-sound-label>Sound off</span>
+      </button>
+      <div class="ttg" data-theme-toggle>
+        <div class="ttg__pill" data-theme-pill role="group" aria-label="Theme">
+          <span class="ttg__indicator" data-theme-indicator aria-hidden="true"></span>
+          <button type="button" class="ttg__dot" data-theme-dot="livery" aria-label="Switch to MV Livery theme"><span class="ttg__swatch ttg__swatch--livery" aria-hidden="true"></span></button>
+          <button type="button" class="ttg__dot" data-theme-dot="night" aria-label="Switch to Night Race theme"><span class="ttg__swatch ttg__swatch--night" aria-hidden="true"></span></button>
+          <button type="button" class="ttg__dot" data-theme-dot="orange" aria-label="Switch to Orange Army theme"><span class="ttg__swatch ttg__swatch--orange" aria-hidden="true"></span></button>
+          <button type="button" class="ttg__dot" data-theme-dot="mono" aria-label="Switch to Monochrome theme"><span class="ttg__swatch ttg__swatch--mono" aria-hidden="true"></span></button>
+          <span class="ttg__label mono" data-theme-label>MV Livery</span>
+        </div>
+        <button type="button" class="ttg__mobile" data-theme-mobile aria-haspopup="true" aria-expanded="false" aria-label="Choose theme"><span class="ttg__swatch" data-theme-mobile-swatch aria-hidden="true"></span></button>
+        <div class="ttg__popover" data-theme-popover role="group" aria-label="Theme">
+          <button type="button" class="ttg__popover-row" data-theme-dot="livery"><span class="ttg__swatch ttg__swatch--livery" aria-hidden="true"></span><span class="mono">MV Livery</span></button>
+          <button type="button" class="ttg__popover-row" data-theme-dot="night"><span class="ttg__swatch ttg__swatch--night" aria-hidden="true"></span><span class="mono">Night Race</span></button>
+          <button type="button" class="ttg__popover-row" data-theme-dot="orange"><span class="ttg__swatch ttg__swatch--orange" aria-hidden="true"></span><span class="mono">Orange Army</span></button>
+          <button type="button" class="ttg__popover-row" data-theme-dot="mono"><span class="ttg__swatch ttg__swatch--mono" aria-hidden="true"></span><span class="mono">Monochrome</span></button>
+        </div>
+      </div>
+      <button type="button" class="hdr__burger" data-menu-toggle aria-expanded="false" aria-controls="site-menu" aria-label="Open menu">
+        <span class="hdr__burger-line"></span><span class="hdr__burger-line"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ============ MENU ============ -->
+<div class="mnu" id="site-menu" data-menu inert aria-hidden="true" aria-label="Site menu" role="dialog" aria-modal="true">
+  <div class="mnu__tiles" aria-hidden="true" data-menu-tiles></div>
+  <button type="button" class="mnu__close" data-menu-toggle aria-label="Close menu"><span class="mnu__close-line"></span><span class="mnu__close-line"></span></button>
+  <nav class="mnu__nav" aria-label="Primary">
+    <ul>
+      <li class="mnu__item"><span class="mnu__index" aria-hidden="true">01</span><a href="#main" class="mnu__link"><span class="mnu__mask"><span class="mnu__word">Home</span></span><i class="mnu__rule" aria-hidden="true"></i></a></li>
+      <li class="mnu__item"><span class="mnu__index" aria-hidden="true">02</span><a href="#journey" class="mnu__link"><span class="mnu__mask"><span class="mnu__word">Racing</span></span><i class="mnu__rule" aria-hidden="true"></i></a></li>
+      <li class="mnu__item"><span class="mnu__index" aria-hidden="true">03</span><a href="#onoff" class="mnu__link"><span class="mnu__mask"><span class="mnu__word">Sim Racing</span></span><i class="mnu__rule" aria-hidden="true"></i></a></li>
+      <li class="mnu__item"><span class="mnu__index" aria-hidden="true">04</span><a href="#garage" class="mnu__link"><span class="mnu__mask"><span class="mnu__word">Garage</span></span><i class="mnu__rule" aria-hidden="true"></i></a></li>
+      <li class="mnu__item"><span class="mnu__index" aria-hidden="true">05</span><a href="#partners" class="mnu__link"><span class="mnu__mask"><span class="mnu__word">Partners</span></span><i class="mnu__rule" aria-hidden="true"></i></a></li>
+    </ul>
+  </nav>
+  <div class="mnu__bottom">
+    <ul class="mnu__socials">
+      <li><a href="https://instagram.com/maxverstappen1" class="mono" target="_blank" rel="noopener">Instagram</a></li>
+      <li><a href="https://x.com/Max33Verstappen" class="mono" target="_blank" rel="noopener">X</a></li>
+    </ul>
+    <a href="#partners" class="mnu__email mono">Partner enquiries →</a>
+  </div>
+</div>
+
+<!-- ============ LOADER ============ -->
+<div class="ldr" data-loader>
+  <div class="ldr__pre" aria-hidden="true">
+    <i class="ldr__dot"></i>
+    <span class="ldr__mark mono">MAX VERSTAPPEN RACING</span>
+    <span class="ldr__time mono"><em>LAP 1</em>00:00.000</span>
+  </div>
+  <canvas class="ldr__canvas" data-ldr-canvas aria-hidden="true"></canvas>
+  <div class="ldr__snd">
+    <button type="button" class="snd" data-sound-toggle aria-pressed="false" aria-label="Sound off. Turn sound on">
+      <svg class="snd__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 9.5h3.2L12 5.5v13l-4.8-4H4z"></path><path class="snd__wave" d="M15.5 9.2a4 4 0 0 1 0 5.6M18 6.8a7.4 7.4 0 0 1 0 10.4"></path><path class="snd__x" d="M16 9.5l5 5M21 9.5l-5 5"></path></svg>
+    </button>
+  </div>
+  <p class="ldr__hint mono" aria-hidden="true">Click to skip</p>
+  <p class="sr-only" role="status" data-ldr-status>Loading Max Verstappen Racing</p>
+</div>
+
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<section class="hero" data-hero aria-label="Max Verstappen Racing">
+  <canvas class="hero__field" data-hero-field aria-hidden="true"></canvas>
+  <div class="hero__track" data-hero-trackline aria-hidden="true">
+    <svg class="hero__line" viewBox="0 0 1440 900" preserveAspectRatio="none" fill="none" data-hero-linesvg>
+      <path class="hero__line-ghost" d="M 0 640 L 1440 680" data-hero-ghost></path>
+      <path class="hero__line-draw" d="M 0 640 L 1440 680" pathLength="1" data-hero-line></path>
+    </svg>
+    <span class="hero__tick" data-tick="0.16"><i></i><b class="mono">S1</b></span>
+    <span class="hero__tick" data-tick="0.4"><i></i><b class="mono">S2</b></span>
+    <span class="hero__tick" data-tick="0.7"><i></i><b class="mono">S3</b></span>
+  </div>
+  <div class="hero__stage" data-hero-stage>
+    <div class="hero__portrait has-object is-css" data-hero-portrait style="--hx:47.9%;--ht:3.5%;--hw:58%">
+      <img class="hero__img" src="images/hero/max-face.webp" data-ph="images/ph/hero-portrait.svg" alt="Max Verstappen" width="1600" height="2000" fetchpriority="high" decoding="async">
+      <img class="hero__img hero__img--helmet" src="images/hero/max-helmet.webp" data-ph="images/ph/hero-helmet.svg" alt="" aria-hidden="true" width="1000" height="1000" decoding="async">
+    </div>
+  </div>
+  <div class="hero__carview" data-hero-carview aria-hidden="true"></div>
+  <div class="hero__fx" data-hero-fx aria-hidden="true">
+    <span class="hero__callout" data-callout="tyre"><i class="hero__callout-dot"></i><i class="hero__callout-lead"></i><b class="mono" data-callout-label>Front tyre</b></span>
+    <span class="hero__callout" data-callout="fwing"><i class="hero__callout-dot"></i><i class="hero__callout-lead"></i><b class="mono" data-callout-label>Front wing</b></span>
+  </div>
+  <aside class="race" data-hero-race aria-label="Next race">
+    <div class="race__head mono">
+      <span class="race__dot" aria-hidden="true"></span>
+      <span data-race-kicker>Next race</span>
+      <span class="race__sectors" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span class="race__live">Live timing</span>
+    </div>
+    <div class="race__body">
+      <div class="race__info">
+        <p class="race__event" data-race-event>2027 season</p>
+        <p class="race__circuit" data-race-circuit>Calendar to confirm</p>
+        <p class="race__date mono" data-race-date>DATE TBC</p>
+      </div>
+      <svg class="race__map" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+        <path class="race__ghost" data-race-ghost d=""></path>
+        <path class="race__line" data-hero-track pathLength="1" d=""></path>
+        <circle class="race__car" r="2.6" data-race-car></circle>
+      </svg>
+    </div>
+    <div class="race__clock mono" role="timer" aria-live="off">
+      <span class="race__unit"><span class="race__cell"><span class="race__num" data-cd="d">--</span></span><span class="race__lab">Days</span></span>
+      <span class="race__colon" aria-hidden="true">:</span>
+      <span class="race__unit"><span class="race__cell"><span class="race__num" data-cd="h">--</span></span><span class="race__lab">Hrs</span></span>
+      <span class="race__colon" aria-hidden="true">:</span>
+      <span class="race__unit"><span class="race__cell"><span class="race__num" data-cd="m">--</span></span><span class="race__lab">Min</span></span>
+      <span class="race__colon" aria-hidden="true">:</span>
+      <span class="race__unit"><span class="race__cell"><span class="race__num" data-cd="s">--</span></span><span class="race__lab">Sec</span></span>
+    </div>
+  </aside>
+  <div class="hero__sign" data-hero-sign>
+    <span class="hero__stripes" aria-hidden="true"><i></i><i></i><i></i></span>
+    <h1 class="hero__title" data-hero-title>
+      <span class="hero__name">Max Verstappen</span>
+      <span class="hero__racing">Racing</span>
+    </h1>
+    <p class="hero__car mono" data-hero-car>Single-seater — MV livery</p>
+  </div>
+</section>
+
+<!-- ============ MARQUEE + CARD ============ -->
+<div style="display:contents" data-lap-seg data-lap-shape="start" data-lap-sector="1" data-lap-turn="Tarzanbocht" data-lap-track="Circuit Zandvoort">
+<section class="mqc" data-mqc aria-label="Lights out, since 2015">
+  <div class="mqc__mq">
+    <div class="mq" data-mq-group>
+      <div class="mq__row mq__row--sans" data-mq-row data-dir="1">
+        <div class="mq__track" data-mq-track>
+          <div class="mq__run"><span class="mq__word">LIGHTS OUT</span><span class="mq__dot"></span><span class="mq__word">SINCE 2015</span><span class="mq__dot"></span><span class="mq__word">#3</span><span class="mq__dot"></span><span class="mq__word">4× WORLD CHAMPION</span><span class="mq__dot"></span><span class="mq__word">74 WINS</span><span class="mq__dot"></span></div>
+          <div class="mq__run" aria-hidden="true"><span class="mq__word">LIGHTS OUT</span><span class="mq__dot"></span><span class="mq__word">SINCE 2015</span><span class="mq__dot"></span><span class="mq__word">#3</span><span class="mq__dot"></span><span class="mq__word">4× WORLD CHAMPION</span><span class="mq__dot"></span><span class="mq__word">74 WINS</span><span class="mq__dot"></span></div>
+        </div>
+      </div>
+      <div class="mq__row mq__row--serif" data-mq-row data-dir="-1">
+        <div class="mq__track" data-mq-track>
+          <div class="mq__run"><span class="mq__word">simply lovely</span><span class="mq__dot"></span><span class="mq__word">the throttle does not lie</span><span class="mq__dot"></span><span class="mq__word">the apex does not wait</span><span class="mq__dot"></span></div>
+          <div class="mq__run" aria-hidden="true"><span class="mq__word">simply lovely</span><span class="mq__dot"></span><span class="mq__word">the throttle does not lie</span><span class="mq__dot"></span><span class="mq__word">the apex does not wait</span><span class="mq__dot"></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mqc__wrap" data-mqc-wrap>
+    <figure class="mqc__card" data-mqc-card>
+      <div class="mqc__clip" data-mqc-clip>
+        <img class="mqc__img" src="images/car/rb18-studio.webp" data-ph="images/ph/paddock-zandvoort.svg" alt="Max Verstappen's 2022 car in the studio" width="2000" height="1333" loading="lazy" decoding="async" style="object-position:30% 50%">
+      </div>
+      <svg class="mqc__mark" data-mqc-mark viewBox="0 0 220 160" fill="none" aria-hidden="true">
+        <path class="mqc__mark-line" data-mqc-mark-line pathLength="1" d="M8,18 C48,10 70,34 58,58 C46,82 10,78 14,54 C18,30 58,20 86,36 C118,54 112,96 150,100 C176,103 182,78 168,66"></path>
+        <text class="mqc__mark-num" x="160" y="128">3</text>
+      </svg>
+    </figure>
+    <p class="mono mqc__caption" data-mqc-caption data-mg="scramble">GARAGE — RB18, 2022 title car</p>
+  </div>
+</section>
+</div>
+
+<!-- ============ MANIFESTO ============ -->
+<div style="display:contents" data-lap-seg data-lap-shape="hairpin" data-lap-sector="1" data-lap-turn="La Source" data-lap-track="Circuit de Spa-Francorchamps">
+<section class="mfo" data-mfo aria-label="Manifesto">
+  <div class="mfo__in">
+    <p class="mono mfo__label">MANIFESTO / S1 S2 S3
+      <span class="mfo__chips" aria-hidden="true"><span class="mfo__chip"></span><span class="mfo__chip"></span><span class="mfo__chip"></span></span>
+    </p>
+    <p class="mfo__copy" data-mfo-copy>
+      <span class="mfo__line" data-words="Long before he could drive on public roads, he had already chosen the |apex| over the excuses."></span>
+      <span class="mfo__line" data-words="Karting, simulators and race weekends ask the same question — brake later, carry more speed, do it again until it is |instinct.|"></span>
+      <span class="mfo__line" data-words="Four titles later, car #3 still answers first, |flat-out.|"></span>
+    </p>
+  </div>
+</section>
+</div>
+
+<!-- ============ BY THE NUMBERS ============ -->
+<div style="display:contents" data-lap-seg data-lap-shape="pit" data-lap-sector="1" data-lap-turn="Hunserug" data-lap-track="Circuit Zandvoort">
+<section class="sts" id="stats" data-sts aria-label="Career statistics">
+  <div class="sts__in">
+    <p class="mono sts__label">CAREER / FORMULA ONE · 2015–2026
+      <span class="mfo__chips" aria-hidden="true"><span class="mfo__chip is-lit"></span><span class="mfo__chip is-lit"></span><span class="mfo__chip is-lit"></span></span>
+    </p>
+    <h2 class="sts__head" data-reveal-head>
+      <span class="sts__line"><span class="sts__mask"><span class="sts__word">BY THE</span></span></span>
+      <span class="sts__line sts__line--accent"><span class="sts__mask"><span class="sts__word sts__word--accent">numbers.</span></span></span>
+    </h2>
+    <div class="sts__grid" data-sts-grid></div>
+    <dl class="sts__sheet" data-sts-sheet></dl>
+  </div>
+</section>
+</div>
+
+<!-- ============ JOURNEY ============ -->
+<div style="display:contents" data-lap-seg data-lap-shape="esses" data-lap-sector="2" data-lap-turn="S Curves" data-lap-track="Suzuka">
+<section class="jny" id="journey" data-jny aria-label="Since 2013 — career journey">
+  <div class="jny__pin" data-jny-pin>
+    <p class="mono jny__label">SINCE <span>2013</span></p>
+    <div class="jny__year" data-jny-year aria-hidden="true">2013</div>
+    <div class="jny__stage" data-jny-stage>
+      <svg class="jny__line" data-jny-line viewBox="0 0 2000 300" preserveAspectRatio="none" aria-hidden="true">
+        <path class="jny__line-ghost" d="M0,150 C150,50 300,50 450,150 C600,250 750,250 900,150 C1050,50 1200,50 1350,150 C1500,250 1650,250 1800,150 C1900,100 1960,120 2000,150"></path>
+        <path class="jny__line-draw" data-jny-line-draw pathLength="1" d="M0,150 C150,50 300,50 450,150 C600,250 750,250 900,150 C1050,50 1200,50 1350,150 C1500,250 1650,250 1800,150 C1900,100 1960,120 2000,150"></path>
+      </svg>
+      <div class="jny__comet" data-jny-comet aria-hidden="true"></div>
+      <div class="jny__track" data-jny-track></div>
+    </div>
+  </div>
+  <div class="jny__m" data-jny-m>
+    <p class="mono jny__m-year" data-jny-m-year>SINCE 2013 — 2013</p>
+    <div class="jny__m-stage">
+      <svg class="jny__m-line" viewBox="0 0 40 1440" preserveAspectRatio="none" aria-hidden="true">
+        <path class="jny__line-ghost" d="M20,0 C60,120 -10,240 20,360 C50,480 -10,600 20,720 C50,840 -10,960 20,1080 C50,1200 10,1320 20,1440"></path>
+        <path class="jny__line-draw" data-jny-m-line pathLength="1" d="M20,0 C60,120 -10,240 20,360 C50,480 -10,600 20,720 C50,840 -10,960 20,1080 C50,1200 10,1320 20,1440"></path>
+      </svg>
+      <ul class="jny__m-list" data-jny-m-list></ul>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- ============ ON TRACK / OFF TRACK ============ -->
+<div style="display:contents" data-lap-seg data-lap-shape="eau" data-lap-sector="2" data-lap-dark="1" data-lap-turn="Eau Rouge–Raidillon" data-lap-track="Circuit de Spa-Francorchamps">
+<section class="onoff" id="onoff" data-onoff aria-label="On track, on the sim">
+  <a class="onoff__half onoff__half--track" data-onoff-half href="#journey">
+    <img class="onoff__img" src="images/car/rb18-studio.webp" data-ph="images/ph/onoff-track.svg" alt="Max Verstappen's 2022 car" width="2000" height="1333" loading="lazy" decoding="async">
+    <span class="onoff__veil" aria-hidden="true"></span>
+    <h2 class="onoff__title">ON TRACK <em class="onoff__sub">racing</em></h2>
+  </a>
+  <a class="onoff__half onoff__half--screen" data-onoff-half href="#garage">
+    <img class="onoff__img onoff__img--offscreen" src="images/offtrack/sim-rig.webp" data-ph="images/ph/onoff-sim.svg" alt="Max Verstappen sim racing" width="1800" height="1200" loading="lazy" decoding="async">
+    <span class="onoff__veil" aria-hidden="true"></span>
+    <h2 class="onoff__title">OFF TRACK <em class="onoff__sub">the sim</em></h2>
+  </a>
+  <svg class="onoff__scribble" data-onoff-scribble viewBox="0 0 460 140" aria-hidden="true">
+    <path class="onoff__scribble-under" data-onoff-scribble-line pathLength="1" d="M20,110 C70,130 110,100 150,112 C190,124 230,96 270,110 C310,124 350,98 400,112"></path>
+    <text class="onoff__scribble-text" data-onoff-scribble-text x="230" y="70" text-anchor="middle">both.</text>
+  </svg>
+</section>
+</div>
+
+<!-- ============ GARAGE ============ -->
+<div style="display:contents" data-lap-seg data-lap-shape="ninety" data-lap-sector="2" data-lap-dark="1" data-lap-turn="Remus" data-lap-track="Red Bull Ring">
+<section class="grg" id="garage" data-garage aria-labelledby="grg-h">
+  <div class="grg-bay" data-bay>
+    <div class="grg-stage" data-grg-stage>
+      <div class="grg-photo" data-grg-photo>
+        <img src="images/car/rb18-studio.webp" alt="Max Verstappen's RB18, the 2022 title car, in the studio" width="2000" height="1333" decoding="async">
+        <span class="grg-sweep" aria-hidden="true"></span>
+        <div class="grg-hots">
+          <button type="button" class="grg-hs" data-hot="frontwing"><span class="dot" aria-hidden="true"></span><span class="tag mono" data-hot-text>Front wing</span></button>
+          <button type="button" class="grg-hs" data-hot="brakes"><span class="dot" aria-hidden="true"></span><span class="tag mono" data-hot-text>Front tyre</span></button>
+          <button type="button" class="grg-hs" data-hot="livery"><span class="dot" aria-hidden="true"></span><span class="tag mono" data-hot-text>Sidepod</span></button>
+          <button type="button" class="grg-hs" data-hot="cockpit"><span class="dot" aria-hidden="true"></span><span class="tag mono" data-hot-text>Cockpit</span></button>
+        </div>
+      </div>
+      <div class="grg-light" data-grg-light aria-hidden="true"></div>
+    </div>
+    <div class="grg-scrim" aria-hidden="true"></div>
+    <div class="grg-vf" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+    <header class="grg-top">
+      <h2 id="grg-h" class="grg-h"><span class="grg-h-c">The garage</span></h2>
+      <p class="mono grg-turn">Tarzanbocht — Circuit Zandvoort</p>
+    </header>
+    <div class="mono grg-hud" aria-hidden="true">
+      <span class="grg-live"><i></i>Live</span>
+      <span>Camera <b data-readout>041</b>°</span>
+    </div>
+    <div class="grg-id">
+      <p class="mono grg-kick" data-kick>Open wheel</p>
+      <h3 class="grg-name" data-name style="--wd:72">Single-seater</h3>
+      <p class="grg-note mono" data-note hidden></p>
+    </div>
+    <aside class="grg-specs" aria-label="Specification">
+      <dl class="grg-spec" data-spec></dl>
+      <p class="grg-credit" data-credit></p>
+    </aside>
+    <div class="grg-stripe" data-stripe aria-hidden="true"><i></i><i></i><i></i></div>
+    <p class="mono grg-hint" aria-hidden="true">Drag to look around</p>
+  </div>
+</section>
+</div>
+
+<!-- ============ PARTNER CTA ============ -->
+<div style="display:contents" data-lap-seg data-lap-shape="sweep" data-lap-sector="3" data-lap-turn="Hugenholtzbocht" data-lap-track="Circuit Zandvoort">
+<section class="pcta" id="partners" data-pcta aria-label="Partner with MV Racing">
+  <div class="pcta__in">
+    <h2 class="pcta__head" data-reveal-head>
+      <span class="pcta__line"><span class="pcta__mask"><span class="pcta__word">RACE WITH</span></span></span>
+      <span class="pcta__line pcta__line--accent"><span class="pcta__mask"><span class="pcta__word pcta__word--accent">us.</span></span></span>
+    </h2>
+    <div class="pcta__tiles">
+      <article class="pcta__tile" data-rise tabindex="0"><span class="pcta__tile-bar" aria-hidden="true"></span><h3 class="pcta__tile-name">Title partner</h3><p class="pcta__tile-desc">Lead billing on the car livery, race suit, paddock presence and every digital post. Details in the proposal deck.</p><span class="pcta__tile-arrow" aria-hidden="true">&rarr;</span></article>
+      <article class="pcta__tile" data-rise tabindex="0"><span class="pcta__tile-bar" aria-hidden="true"></span><h3 class="pcta__tile-name">Official partner</h3><p class="pcta__tile-desc">Branding on the race suit and paddock signage, with shared digital placement. Details in the proposal deck.</p><span class="pcta__tile-arrow" aria-hidden="true">&rarr;</span></article>
+      <article class="pcta__tile" data-rise tabindex="0"><span class="pcta__tile-bar" aria-hidden="true"></span><h3 class="pcta__tile-name">Technical supplier</h3><p class="pcta__tile-desc">Credit on the car and in paddock and digital technical call-outs. Details in the proposal deck.</p><span class="pcta__tile-arrow" aria-hidden="true">&rarr;</span></article>
+    </div>
+    <div class="pcta__cta">
+      <a class="pcta__pill" href="mailto:partners@example.com?subject=Partnering%20with%20MV%20Racing" data-magnetic="0.4"><span class="pcta__pill-in" data-magnetic-inner>Partner with MV Racing</span></a>
+      <p class="mono pcta__proposal" data-mg="scramble">PROPOSAL 2027 — AVAILABLE ON REQUEST</p>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- ============ PARTNER MARQUEE ============ -->
+<div style="display:contents" data-lap-seg data-lap-shape="straight" data-lap-sector="3" data-lap-turn="Kemmel Straight" data-lap-track="Circuit de Spa-Francorchamps">
+<section class="pmq" data-pmq aria-label="Partners">
+  <p class="pmq__word" data-pmq-word aria-hidden="true">partners</p>
+  <div class="pmq__row">
+    <div class="mq" data-mq-group>
+      <div class="mq__row mq__row--sans" data-mq-row data-dir="1">
+        <div class="mq__track" data-mq-track>
+          <div class="mq__run"><span class="mq__word">Verstappen.com Racing</span><span class="mq__dot"></span><span class="mq__word">Team Redline</span><span class="mq__dot"></span><span class="mq__word">Your brand here</span><span class="mq__dot"></span><span class="mq__word">Title partner — open</span><span class="mq__dot"></span></div>
+          <div class="mq__run" aria-hidden="true"><span class="mq__word">Verstappen.com Racing</span><span class="mq__dot"></span><span class="mq__word">Team Redline</span><span class="mq__dot"></span><span class="mq__word">Your brand here</span><span class="mq__dot"></span><span class="mq__word">Title partner — open</span><span class="mq__dot"></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- ============ SOCIALS ============ -->
+<div style="display:contents" data-lap-seg data-lap-shape="final" data-lap-sector="3" data-lap-turn="Arie Luyendijkbocht" data-lap-track="Circuit Zandvoort">
+<section class="soc" data-soc aria-label="Follow Max Verstappen">
+  <div class="soc__in">
+    <header class="soc__head">
+      <h2 class="soc__title" data-reveal-head>
+        <span class="soc__line"><span class="soc__mask"><span class="soc__word">FOLLOW THE</span></span></span>
+        <span class="soc__line"><span class="soc__mask"><span class="soc__word soc__word--accent">lap.</span></span></span>
+      </h2>
+      <ul class="mono soc__list" aria-label="Handles">
+        <li class="soc__item"><span class="soc__item-k">Instagram</span><a class="soc__item-v" href="https://instagram.com/maxverstappen1" target="_blank" rel="noopener">@maxverstappen1</a></li>
+        <li class="soc__item"><span class="soc__item-k">X</span><a class="soc__item-v" href="https://x.com/Max33Verstappen" target="_blank" rel="noopener">@Max33Verstappen</a></li>
+      </ul>
+    </header>
+    <div class="soc__fan" data-soc-fan></div>
+  </div>
+</section>
+</div>
+</main>
+
+<!-- ============ RACING LINE ============ -->
+<div class="lap" data-lap aria-hidden="true">
+  <svg class="lap__svg" data-lap-svg xmlns="http://www.w3.org/2000/svg" fill="none"></svg>
+  <div class="lap__labels" data-lap-labels></div>
+  <div class="lap__boxui" data-lap-box>
+    <span class="lap__box-k">PARC FERMÉ</span>
+    <span class="lap__box-time" data-lap-box-time></span>
+    <i class="lap__lamp"></i>
+  </div>
+</div>
+<canvas class="lap__car" data-lap-car aria-hidden="true"></canvas>
+
+<div class="tbar" data-tbar aria-hidden="true">
+  <div class="tbar__track">
+    <i class="tbar__seg" data-tbar-seg><b></b></i><i class="tbar__seg" data-tbar-seg><b></b></i><i class="tbar__seg" data-tbar-seg><b></b></i>
+  </div>
+  <div class="tbar__chip">
+    <span class="tbar__k">LAP</span>
+    <span class="tbar__time" data-tbar-time>00:00.000</span>
+    <span class="tbar__sec" data-tbar-sec>S1</span>
+    <span class="tbar__turn" data-tbar-turn>GRID</span>
+  </div>
+</div>
+
+<!-- ============ FOOTER ============ -->
+<footer class="ftr" data-footer>
+  <div class="ftr__notch" aria-hidden="true"><span class="ftr__notch-wing ftr__notch-wing--l"></span><span class="ftr__notch-line"></span><span class="ftr__notch-wing ftr__notch-wing--r"></span></div>
+  <div class="ftr__in">
+    <h2 class="ftr__head" data-reveal-head>
+      <span class="ftr__head-line"><span class="ftr__head-mask"><span class="ftr__head-word">LIGHTS OUT.</span></span></span>
+      <span class="ftr__head-line"><span class="ftr__head-mask"><span class="ftr__head-word ftr__head-word--accent">SIMPLY LOVELY.</span></span></span>
+    </h2>
+    <div class="ftr__row">
+      <nav class="ftr__col" aria-label="Pages">
+        <p class="mono ftr__label">Pages</p>
+        <ul>
+          <li><a href="#main">Home</a></li>
+          <li><a href="#stats">Numbers</a></li>
+          <li><a href="#journey">Racing</a></li>
+          <li><a href="#onoff">Sim Racing</a></li>
+          <li><a href="#garage">Garage</a></li>
+          <li><a href="#partners">Partners</a></li>
+        </ul>
+      </nav>
+      <div class="ft-hero" data-slot="footer-helmet" aria-hidden="true"></div>
+      <nav class="ftr__col ftr__col--right" aria-label="Follow">
+        <p class="mono ftr__label">Follow</p>
+        <ul>
+          <li><a href="https://instagram.com/maxverstappen1" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://x.com/Max33Verstappen" target="_blank" rel="noopener">X</a></li>
+        </ul>
+      </nav>
+    </div>
+    <ul class="ftr__partners" aria-label="Partners">
+      <li class="mono">Verstappen.com Racing</li><li class="mono">Team Redline</li><li class="mono">Your brand here</li>
+    </ul>
+    <div class="ftr__bottom">
+      <p class="ftr__fan">© 2026 MV Racing — fan-made tribute. Not affiliated with Max Verstappen, his teams or partners.</p>
+      <div class="ftr__legal"><a href="#">Privacy</a><a href="#">Terms</a></div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script src="js/garage-photo.js"></script>
+<script type="module" src="js/garage.js"></script>
+</body>
+</html>

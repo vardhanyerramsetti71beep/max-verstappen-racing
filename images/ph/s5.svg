@@ -1,0 +1,14 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='800' height='1400' viewBox='0 0 800 1400'>
+<defs><linearGradient id='bg' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='#ffc906'/><stop offset='1' stop-color='#a8520a'/></linearGradient>
+<radialGradient id='glow' cx='.75' cy='.3' r='.7'><stop offset='0' stop-color='#ffffff' stop-opacity='.18'/><stop offset='1' stop-color='#ffffff' stop-opacity='0'/></radialGradient>
+<filter id='g'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .35 0'/></filter></defs>
+<rect width='800' height='1400' fill='url(#bg)'/><rect width='800' height='1400' fill='url(#glow)'/>
+<path d='M 787 588 C 782 618, 796 650, 780 672 C 764 695, 718 701, 690 723 C 661 745, 642 804, 610 804 C 579 803, 546 728, 503 721 C 460 715, 386 774, 352 766 C 318 758, 315 705, 299 675 C 284 646, 262 618, 260 588 C 258 558, 262 517, 288 497 C 314 477, 382 487, 414 468 C 446 448, 449 393, 480 381 C 512 370, 571 382, 603 397 C 634 412, 635 455, 669 472 C 703 488, 787 475, 807 494 C 826 514, 791 558, 787 588 Z' fill='none' stroke='#ffffff' stroke-opacity='.10' stroke-width='48' stroke-linejoin='round'/>
+<path d='M 787 588 C 782 618, 796 650, 780 672 C 764 695, 718 701, 690 723 C 661 745, 642 804, 610 804 C 579 803, 546 728, 503 721 C 460 715, 386 774, 352 766 C 318 758, 315 705, 299 675 C 284 646, 262 618, 260 588 C 258 558, 262 517, 288 497 C 314 477, 382 487, 414 468 C 446 448, 449 393, 480 381 C 512 370, 571 382, 603 397 C 634 412, 635 455, 669 472 C 703 488, 787 475, 807 494 C 826 514, 791 558, 787 588 Z' fill='none' stroke='#ffffff' stroke-opacity='.55' stroke-width='3' stroke-dasharray='10 10'/>
+<g transform='skewX(-24)'><rect x='126' y='140' width='80' height='17' fill='#e4002b'/><rect x='214' y='140' width='52' height='17' fill='#ff6b00'/><rect x='274' y='140' width='28' height='17' fill='#ffc906'/></g>
+<text x='48' y='1204' font-family="'Arial Narrow','Helvetica Neue',Arial,sans-serif" font-weight='900' font-size='420' fill='#ffffff' fill-opacity='.92' letter-spacing='-4'>#3</text>
+<text x='52' y='1302' font-family="Didot,'Bodoni 72',Georgia,serif" font-style='italic' font-size='70' fill='#ffc906'>max verstappen</text>
+<text x='752' y='112' text-anchor='end' font-family="'SF Mono',Consolas,monospace" font-size='31' fill='#ffffff' fill-opacity='.65' letter-spacing='2'>POST</text>
+<text x='752' y='1337' text-anchor='end' font-family="'SF Mono',Consolas,monospace" font-size='25' fill='#ffffff' fill-opacity='.45' letter-spacing='1.5'>ADD PHOTO → images/social/s5.webp</text>
+<rect width='800' height='1400' filter='url(#g)' opacity='.6'/>
+</svg>

@@ -1,0 +1,14 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='1800' height='1200' viewBox='0 0 1800 1200'>
+<defs><linearGradient id='bg' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='#3b145a'/><stop offset='1' stop-color='#0a0612'/></linearGradient>
+<radialGradient id='glow' cx='.75' cy='.3' r='.7'><stop offset='0' stop-color='#ffffff' stop-opacity='.18'/><stop offset='1' stop-color='#ffffff' stop-opacity='0'/></radialGradient>
+<filter id='g'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .35 0'/></filter></defs>
+<rect width='1800' height='1200' fill='url(#bg)'/><rect width='1800' height='1200' fill='url(#glow)'/>
+<path d='M 1683 504 C 1684 534, 1514 556, 1480 595 C 1446 635, 1510 713, 1480 742 C 1451 771, 1365 753, 1305 768 C 1246 783, 1173 841, 1123 831 C 1073 820, 1056 738, 1005 707 C 955 677, 835 682, 820 648 C 806 614, 922 553, 920 504 C 918 455, 793 389, 807 355 C 822 321, 947 312, 1004 300 C 1062 288, 1106 288, 1155 281 C 1205 274, 1247 260, 1300 259 C 1352 258, 1440 250, 1469 276 C 1499 302, 1441 376, 1477 414 C 1512 452, 1683 474, 1683 504 Z' fill='none' stroke='#ffffff' stroke-opacity='.10' stroke-width='72' stroke-linejoin='round'/>
+<path d='M 1683 504 C 1684 534, 1514 556, 1480 595 C 1446 635, 1510 713, 1480 742 C 1451 771, 1365 753, 1305 768 C 1246 783, 1173 841, 1123 831 C 1073 820, 1056 738, 1005 707 C 955 677, 835 682, 820 648 C 806 614, 922 553, 920 504 C 918 455, 793 389, 807 355 C 822 321, 947 312, 1004 300 C 1062 288, 1106 288, 1155 281 C 1205 274, 1247 260, 1300 259 C 1352 258, 1440 250, 1469 276 C 1499 302, 1441 376, 1477 414 C 1512 452, 1683 474, 1683 504 Z' fill='none' stroke='#ffffff' stroke-opacity='.55' stroke-width='3' stroke-dasharray='10 10'/>
+<g transform='skewX(-24)'><rect x='186' y='120' width='180' height='14' fill='#e4002b'/><rect x='384' y='120' width='117' height='14' fill='#ff6b00'/><rect x='519' y='120' width='63' height='14' fill='#ffc906'/></g>
+<text x='108' y='1032' font-family="'Arial Narrow','Helvetica Neue',Arial,sans-serif" font-weight='900' font-size='504' fill='#ffffff' fill-opacity='.92' letter-spacing='-4'></text>
+<text x='117' y='1116' font-family="Didot,'Bodoni 72',Georgia,serif" font-style='italic' font-size='60' fill='#ffc906'></text>
+<text x='1692' y='96' text-anchor='end' font-family="'SF Mono',Consolas,monospace" font-size='26' fill='#ffffff' fill-opacity='.65' letter-spacing='2'>SIM RIG</text>
+<text x='1692' y='1146' text-anchor='end' font-family="'SF Mono',Consolas,monospace" font-size='22' fill='#ffffff' fill-opacity='.45' letter-spacing='1.5'>ADD PHOTO → images/offtrack/sim-rig.webp</text>
+<rect width='1800' height='1200' filter='url(#g)' opacity='.6'/>
+</svg>

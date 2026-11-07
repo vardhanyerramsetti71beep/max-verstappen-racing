@@ -1,0 +1,14 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='1500' height='1000' viewBox='0 0 1500 1000'>
+<defs><linearGradient id='bg' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='#5c1222'/><stop offset='1' stop-color='#100a18'/></linearGradient>
+<radialGradient id='glow' cx='.75' cy='.3' r='.7'><stop offset='0' stop-color='#ffffff' stop-opacity='.18'/><stop offset='1' stop-color='#ffffff' stop-opacity='0'/></radialGradient>
+<filter id='g'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .35 0'/></filter></defs>
+<rect width='1500' height='1000' fill='url(#bg)'/><rect width='1500' height='1000' fill='url(#glow)'/>
+<path d='M 1373 420 C 1383 455, 1370 506, 1343 535 C 1315 564, 1254 583, 1210 596 C 1166 610, 1120 617, 1080 615 C 1040 613, 1014 585, 969 585 C 925 585, 849 624, 812 613 C 776 601, 771 549, 748 517 C 724 485, 670 452, 672 420 C 674 388, 740 361, 761 328 C 783 294, 769 235, 802 217 C 835 200, 910 233, 960 224 C 1009 215, 1053 164, 1099 164 C 1145 163, 1203 194, 1234 221 C 1265 248, 1261 293, 1284 326 C 1308 359, 1364 385, 1373 420 Z' fill='none' stroke='#ffffff' stroke-opacity='.10' stroke-width='60' stroke-linejoin='round'/>
+<path d='M 1373 420 C 1383 455, 1370 506, 1343 535 C 1315 564, 1254 583, 1210 596 C 1166 610, 1120 617, 1080 615 C 1040 613, 1014 585, 969 585 C 925 585, 849 624, 812 613 C 776 601, 771 549, 748 517 C 724 485, 670 452, 672 420 C 674 388, 740 361, 761 328 C 783 294, 769 235, 802 217 C 835 200, 910 233, 960 224 C 1009 215, 1053 164, 1099 164 C 1145 163, 1203 194, 1234 221 C 1265 248, 1261 293, 1284 326 C 1308 359, 1364 385, 1373 420 Z' fill='none' stroke='#ffffff' stroke-opacity='.55' stroke-width='3' stroke-dasharray='10 10'/>
+<g transform='skewX(-24)'><rect x='155' y='100' width='150' height='12' fill='#e4002b'/><rect x='320' y='100' width='98' height='12' fill='#ff6b00'/><rect x='432' y='100' width='53' height='12' fill='#ffc906'/></g>
+<text x='90' y='860' font-family="'Arial Narrow','Helvetica Neue',Arial,sans-serif" font-weight='900' font-size='420' fill='#ffffff' fill-opacity='.92' letter-spacing='-4'>2016</text>
+<text x='98' y='930' font-family="Didot,'Bodoni 72',Georgia,serif" font-style='italic' font-size='50' fill='#ffc906'>first win, aged 18</text>
+<text x='1410' y='80' text-anchor='end' font-family="'SF Mono',Consolas,monospace" font-size='22' fill='#ffffff' fill-opacity='.65' letter-spacing='2'>BARCELONA</text>
+<text x='1410' y='955' text-anchor='end' font-family="'SF Mono',Consolas,monospace" font-size='18' fill='#ffffff' fill-opacity='.45' letter-spacing='1.5'>ADD PHOTO → images/history/2016-barcelona.webp</text>
+<rect width='1500' height='1000' filter='url(#g)' opacity='.6'/>
+</svg>
