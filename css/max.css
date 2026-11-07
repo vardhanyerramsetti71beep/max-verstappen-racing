@@ -146,6 +146,44 @@ html[data-theme=night] body::after { mix-blend-mode: screen; opacity: .05; }
 .mnu.is-open { display: grid; }
 .mnu__tile { transform: scaleY(0); }
 
+/* "Super Max" music button: same pill as the sound toggle, with a live equaliser */
+.mus { display: inline-flex; align-items: center; gap: 7px; height: 34px; padding: 0 12px 0 9px; border: 1px solid var(--line); border-radius: 999px; color: var(--ink); background: color-mix(in srgb, var(--ground) 72%, transparent); white-space: nowrap; transition: border-color .3s, background-color .3s; }
+.mus:hover { border-color: color-mix(in srgb, var(--accent) 50%, var(--line)); }
+.mus__icon { width: 17px; height: 17px; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.mus__icon circle { fill: currentColor; stroke: none; }
+.mus.is-on { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 10%, var(--ground)); }
+.mus.is-on .mus__icon { display: none; }
+.mus__label { font-size: 11px; letter-spacing: .08em; }
+.mus__eq { display: none; align-items: flex-end; gap: 2px; width: 17px; height: 14px; }
+.mus.is-on .mus__eq, .mus__eq--card { display: inline-flex; }
+.mus__eq i { flex: 1; height: 30%; background: var(--accent); border-radius: 1px; animation: mus-eq .9s ease-in-out infinite alternate; }
+.mus__eq i:nth-child(2) { animation-delay: -.3s; background: var(--accent-2); }
+.mus__eq i:nth-child(3) { animation-delay: -.6s; background: var(--accent-3); }
+.mus__eq i:nth-child(4) { animation-delay: -.15s; }
+.mus-card:not(.is-playing) .mus__eq i, .mus:not(.is-on) .mus__eq i { animation-play-state: paused; }
+@keyframes mus-eq { 0% { height: 20%; } 50% { height: 100%; } 100% { height: 45%; } }
+.mus.is-loading .mus__icon { animation: mus-pulse .8s ease-in-out infinite alternate; }
+@keyframes mus-pulse { to { opacity: .3; } }
+@media (max-width: 1000px) { .mus { padding: 0; width: 34px; justify-content: center; } .mus__label { display: none; } }
+@media (prefers-reduced-motion: reduce) { .mus__eq i { animation: none; height: 70%; } }
+
+/* Now playing card (keeps YouTube's player visible while it plays) */
+.mus-card { position: fixed; z-index: 62; top: calc(var(--header-h) + 6px); right: var(--gutter); width: min(380px, calc(100vw - 2 * var(--gutter))); padding: 12px 14px 12px; border-radius: 6px; background: var(--panel); color: var(--on-panel); box-shadow: 0 24px 60px -24px rgb(0 0 0 / .6); overflow: hidden; opacity: 0; visibility: hidden; transform: translateY(-10px); transition: opacity .35s var(--ease-out), transform .45s var(--ease-out), visibility 0s .45s; }
+.mus-card::before { content: ""; position: absolute; inset: 0 0 auto; height: 2px; background: linear-gradient(90deg, var(--accent), var(--accent-2), var(--accent-3)); }
+.mus-card.is-open { opacity: 1; visibility: visible; transform: none; transition-delay: 0s; }
+.mus-card__head { display: flex; align-items: center; gap: 8px; color: color-mix(in srgb, var(--on-panel) 62%, transparent); }
+.mus-card__head .mus__eq { margin-left: 4px; }
+.mus-card__close { margin-left: auto; width: 26px; height: 26px; border-radius: 999px; color: var(--on-panel); font-size: 12px; line-height: 1; }
+.mus-card__close:hover { background: color-mix(in srgb, var(--on-panel) 12%, transparent); }
+.mus-card__title { margin: 8px 0 10px; display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.mus-card__song { font-family: var(--f-sans); font-stretch: 70%; font-weight: 800; font-size: 24px; line-height: 1; text-transform: uppercase; }
+.mus-card__artist { font-family: var(--f-display); font-style: italic; font-size: 17px; }
+.mus-card__player { position: relative; width: 100%; aspect-ratio: 16 / 9; min-height: 200px; border-radius: 4px; overflow: hidden; background: #000; }
+.mus-card__player iframe, .mus-card__player > div { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.mus-card__note { margin: 8px 0 0; color: color-mix(in srgb, var(--on-panel) 50%, transparent); }
+.mus-card__note a { color: var(--accent-3); }
+html.is-open .mus-card { opacity: 0; visibility: hidden; }
+
 /* Keep the header on one line at tablet widths */
 @media (max-width: 900px) { .hdr__right .ttg__label { display: none; } .hdr__right { gap: 10px; } }
 @media (max-width: 760px) { .hdr__badge { display: none; } }

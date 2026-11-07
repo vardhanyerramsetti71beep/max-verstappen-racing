@@ -2,6 +2,9 @@
 window.MV = {
   number: '3',
 
+  /* The header's music button plays this through YouTube's official embedded player. */
+  song: { title: 'Super Max!', artist: 'Pitstop Boys', youtube: '43HCYSXZ9GI' },
+
   /* Upcoming races (start times in UTC, approximate — check against the official calendar).
      The hero card shows the first race that hasn't started yet; after the last one it falls back to `offseason`. */
   races: [

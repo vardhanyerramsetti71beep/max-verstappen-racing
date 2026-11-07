@@ -31,6 +31,11 @@
         <svg class="snd__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 9.5h3.2L12 5.5v13l-4.8-4H4z"></path><path class="snd__wave" d="M15.5 9.2a4 4 0 0 1 0 5.6M18 6.8a7.4 7.4 0 0 1 0 10.4"></path><path class="snd__x" d="M16 9.5l5 5M21 9.5l-5 5"></path></svg>
         <span class="snd__label mono" data-sound-label>Sound off</span>
       </button>
+      <button type="button" class="mus" data-music-toggle aria-pressed="false" aria-controls="mus-card" aria-label="Play Super Max! by Pitstop Boys">
+        <svg class="mus__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 17.5V6l10-2v11.5"></path><circle cx="6.5" cy="17.5" r="2.5"></circle><circle cx="16.5" cy="15.5" r="2.5"></circle></svg>
+        <span class="mus__eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+        <span class="mus__label mono">Super Max</span>
+      </button>
       <div class="ttg" data-theme-toggle>
         <div class="ttg__pill" data-theme-pill role="group" aria-label="Theme">
           <span class="ttg__indicator" data-theme-indicator aria-hidden="true"></span>
@@ -54,6 +59,19 @@
     </div>
   </div>
 </header>
+
+<!-- ============ NOW PLAYING (official YouTube player, loads on demand) ============ -->
+<aside class="mus-card" id="mus-card" data-music-card aria-label="Now playing" aria-hidden="true">
+  <div class="mus-card__head mono">
+    <span class="race__dot" aria-hidden="true"></span>
+    <span>Now playing</span>
+    <span class="mus__eq mus__eq--card" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+    <button type="button" class="mus-card__close" data-music-close aria-label="Stop the song and close">✕</button>
+  </div>
+  <p class="mus-card__title"><span class="mus-card__song" data-music-title>Super Max!</span> <span class="mus-card__artist" data-music-artist>Pitstop Boys</span></p>
+  <div class="mus-card__player"><div id="mus-player"></div></div>
+  <p class="mus-card__note mono" data-music-note>Official video · YouTube</p>
+</aside>
 
 <!-- ============ MENU ============ -->
 <div class="mnu" id="site-menu" data-menu inert aria-hidden="true" aria-label="Site menu" role="dialog" aria-modal="true">
@@ -440,6 +458,7 @@
 <script src="js/data.js"></script>
 <script src="js/main.js"></script>
 <script src="js/garage-photo.js"></script>
+<script src="js/music.js"></script>
 <script type="module" src="js/garage.js"></script>
 </body>
 </html>
