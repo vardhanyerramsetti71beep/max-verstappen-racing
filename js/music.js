@@ -1,4 +1,4 @@
-/* Max Verstappen Racing — "Super Max!" button.
+/* Max Verstappen Racing — music button ("33 Max Verstappen", set in data.js).
    Plays the official upload through YouTube's IFrame player. The player script is only loaded
    when the button is pressed, and the player stays visible in the Now playing card while it plays
    (YouTube requires embedded players to be visible, at least 200×200). */
@@ -13,6 +13,10 @@
 
   document.querySelector('[data-music-title]').textContent = song.title;
   document.querySelector('[data-music-artist]').textContent = song.artist;
+  if (song.note) note.textContent = song.note;
+  const label = btn.querySelector('.mus__label');
+  if (label && song.label) label.textContent = song.label;
+  btn.setAttribute('aria-label', `Play ${song.title} by ${song.artist}`);
   const watchUrl = `https://www.youtube.com/watch?v=${song.youtube}`;
 
   let player = null, apiReady = null, playing = false;
